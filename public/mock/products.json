@@ -1,0 +1,44 @@
+[
+    {
+        "id": "1",
+        "title": "Clothe 1",
+        "description": "description",
+        "image": "/images/whitetshirt.jpg",
+        "price": 34.0
+    },
+    {
+        "id": "2",
+        "title": "Clothe 2",
+        "description": "description",
+        "image": "/images/blacktshirt.jpg",
+        "price": 24.0
+    },
+    {
+        "id": "3",
+        "title": "Clothe 3",
+        "description": "description",
+        "image": "/images/pinktshirt.jpg",
+        "price": 36.0
+    },
+    {
+        "id": "4",
+        "title": "Clothe 4",
+        "description": "description",
+        "image": "/images/milada.jpg",
+        "price": 54.0
+    },
+    {
+        "id": "5",
+        "title": "Clothe 5",
+        "description": "description",
+        "image": "/images/jacket.jpg",
+        "price": 44.0
+    },
+    {
+        "id": "6",
+        "title": "Clothe 6",
+        "description": "description",
+        "image": "/images/colorfuljacket.jpg",
+        "price": 33.0
+    }
+]
