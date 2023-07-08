@@ -1,70 +1,14 @@
 'use client';
-import { useState } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
 
 import Head from 'next/head';
 import styles from './page.module.css';
 
 import products from 'public/mock/products.json';
-import { initiateCheckout } from '@/lib/payments';
-import { DefaultProduct, StripeProduct, CartItem } from '@/types/products';
-
-const defaultCart: DefaultProduct = {
-    products: {},
-};
+import useCart from '@/hooks/use-cart';
 
 export default function Home() {
-    const [cart, setCart] = useState(defaultCart);
-
-    const cartItems = Object.keys(cart.products).map(key => {
-        const product = products.find(({ id }) => `${id}` === `${key}`);
-
-        return {
-            ...cart.products[key],
-            pricePerItem: product?.price,
-        };
-    });
-
-    const subTotal = cartItems.reduce((accumulator, { pricePerItem, quantity }) => {
-        if (pricePerItem) {
-            return accumulator + pricePerItem * quantity;
-        } else {
-            return accumulator;
-        }
-    }, 0);
-
-    const totalItems = cartItems.reduce((accumulator, { quantity }) => {
-        return accumulator + quantity;
-    }, 0);
-
-    const addToCart = ({ price: id }: Omit<StripeProduct, 'quantity'>) => {
-        // price here is actually stripe item id
-        setCart(prevState => {
-            let cartState = { ...prevState };
-
-            if (cartState.products[id]) {
-                cartState.products[id].quantity = cartState.products[id].quantity + 1;
-            } else {
-                cartState.products[id] = {
-                    price: id,
-                    quantity: 1,
-                };
-            }
-
-            return cartState;
-        });
-    };
-
-    const checkout = () => {
-        initiateCheckout({
-            lineItems: cartItems.map(item => {
-                return {
-                    price: item.price,
-                    quantity: item.quantity,
-                };
-            }),
-        });
-    };
+    const { subTotal, totalItems, addToCart, checkout } = useCart();
 
     return (
         <div className={styles.container}>
