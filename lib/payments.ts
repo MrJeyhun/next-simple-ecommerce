@@ -1,7 +1,8 @@
 import { loadStripe } from '@stripe/stripe-js';
 
+//@ts-ignore
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
-
+//@ts-ignore
 export async function initiateCheckout({ lineItems } = {}) {
     const stripe = await stripePromise;
 
