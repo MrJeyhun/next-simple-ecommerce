@@ -1,43 +1,43 @@
 [
     {
-        "id": "1",
-        "title": "Clothe 1",
-        "description": "description",
+        "id": "price_1NRWAGLsnULQe8OphSFOUaue",
+        "title": "White T-Shirt",
+        "description": "Whether you're dressing up for a casual day out or keeping it simple...",
         "image": "/images/whitetshirt.jpg",
         "price": 34.0
     },
     {
-        "id": "2",
-        "title": "Clothe 2",
-        "description": "description",
+        "id": "price_1NRW5pLsnULQe8OpD71LjcoK",
+        "title": "Black T-Shirt",
+        "description": "Perfect for any occasion, from a day at the office to a night out with...",
         "image": "/images/blacktshirt.jpg",
         "price": 24.0
     },
     {
-        "id": "3",
-        "title": "Clothe 3",
-        "description": "description",
+        "id": "price_1NRW9QLsnULQe8OpqGeRCD6t",
+        "title": "Pink T-Shirt",
+        "description": "The Pink T-Shirt is a versatile piece that will brighten up your...",
         "image": "/images/pinktshirt.jpg",
         "price": 36.0
     },
     {
-        "id": "4",
-        "title": "Clothe 4",
-        "description": "description",
+        "id": "price_1NRW8oLsnULQe8Op6rgtNa8d",
+        "title": "Milk Blouse",
+        "description": "Whether you're dressing up for a special occasion or adding a touch of...",
         "image": "/images/milada.jpg",
         "price": 54.0
     },
     {
-        "id": "5",
-        "title": "Clothe 5",
-        "description": "description",
+        "id": "price_1NRW8CLsnULQe8Op3qziWhcI",
+        "title": "Brown Jacket",
+        "description": "The neutral brown color pairs well with any outfit and the timeless...",
         "image": "/images/jacket.jpg",
         "price": 44.0
     },
     {
-        "id": "6",
-        "title": "Clothe 6",
-        "description": "description",
+        "id": "price_1NRW7dLsnULQe8OpcBlHyhRH",
+        "title": "Colorful Jacket",
+        "description": "Perfect for any occasion, whether you're heading out on a chilly day...",
         "image": "/images/colorfuljacket.jpg",
         "price": 33.0
     }
