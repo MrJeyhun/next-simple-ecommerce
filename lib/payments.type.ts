@@ -1,4 +1,4 @@
-export interface InitialCheckoutProps {
+export interface InitiateCheckoutProps {
     lineItems: LineItems[];
 }
 
