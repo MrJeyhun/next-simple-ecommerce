@@ -1,4 +1,4 @@
-import styles from '@/app/page.module.css';
+import styles from '@/styles/page.module.css';
 import { useCart } from '@/hooks/use-cart';
 import products from 'public/mock/products.json';
 

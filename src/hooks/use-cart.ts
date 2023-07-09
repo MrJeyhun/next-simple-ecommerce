@@ -8,7 +8,7 @@ const defaultCart: DefaultProduct = {
     products: {},
 };
 
-//@ts-ignore
+//@ts-ignore TODO: fix ts problem
 export const CartContext: Context<UseCartContext> = createContext();
 
 export const useCartState = () => {
