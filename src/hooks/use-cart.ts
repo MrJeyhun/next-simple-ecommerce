@@ -8,6 +8,7 @@ const defaultCart: DefaultProduct = {
     products: {},
 };
 
+//@ts-ignore
 export const CartContext: Context<UseCartContext> = createContext();
 
 export const useCartState = () => {
