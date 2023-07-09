@@ -25,7 +25,7 @@ export interface CartItem {
     image: string;
 }
 
-export interface CartContext {
+export interface UseCartContext {
     cart: DefaultProduct;
     setCart: Dispatch<SetStateAction<DefaultProduct>>;
     subTotal: number;
