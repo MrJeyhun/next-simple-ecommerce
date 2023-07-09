@@ -2,7 +2,6 @@
 import Head from 'next/head';
 import styles from '@/styles/page.module.css';
 
-import { CartContext, useCartState } from '@/hooks/use-cart';
 import Cart from '@/components/Cart';
 
 export default function Home() {

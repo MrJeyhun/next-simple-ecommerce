@@ -4,6 +4,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 
 import { CartItem } from '@/types/products';
 import styles from '@/styles/product-page.module.css';
+import { useCart } from '@/hooks/use-cart';
 import products from 'public/mock/products.json';
 
 interface Params extends ParsedUrlQuery {
@@ -16,6 +17,8 @@ interface CartItemProps {
 
 export default function Product({ product }: CartItemProps) {
     const { id, title, description, image, price } = product;
+
+    const { addToCart } = useCart();
 
     return (
         <div className={styles.container}>
@@ -37,7 +40,9 @@ export default function Product({ product }: CartItemProps) {
                     <p className={styles.description}>${price.toFixed(2)}</p>
 
                     <p>
-                        <button className={styles.button}>Buy</button>
+                        <button className={styles.button} onClick={() => addToCart({ price: id })}>
+                            Add to Cart
+                        </button>
                     </p>
                 </div>
             </main>
