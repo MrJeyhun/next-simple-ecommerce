@@ -1,7 +1,7 @@
 import { FaShoppingCart } from 'react-icons/fa';
 
-import styles from './navbar.module.css';
 import { useCart } from '@/hooks/use-cart';
+import styles from '@/styles/navbar.module.css';
 
 const Navbar = () => {
     const { subTotal, checkout } = useCart();
