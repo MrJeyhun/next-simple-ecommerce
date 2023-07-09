@@ -1,4 +1,4 @@
-import { useState, createContext, useContext, Dispatch, SetStateAction, Context } from 'react';
+import { useState, useEffect, createContext, useContext, Context } from 'react';
 
 import { DefaultProduct, StripeProduct, UseCartContext } from '@/types/products';
 import { initiateCheckout } from '@/lib/payments';
@@ -13,6 +13,17 @@ export const CartContext: Context<UseCartContext> = createContext();
 
 export const useCartState = () => {
     const [cart, setCart] = useState(defaultCart);
+
+    useEffect(() => {
+        const stateFromLocalStore = window.localStorage.getItem('simple_store_cart');
+        const data = stateFromLocalStore && JSON.parse(stateFromLocalStore);
+        data && setCart(data);
+    }, []);
+
+    useEffect(() => {
+        const data = JSON.stringify(cart);
+        window.localStorage.setItem('simple_store_cart', data);
+    }, [cart]);
 
     const cartItems = Object.keys(cart.products).map(key => {
         const product = products.find(({ id }) => `${id}` === `${key}`);
