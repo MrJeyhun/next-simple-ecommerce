@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, createContext, useContext, Dispatch, SetStateAction, Context } from 'react';
 
-import { DefaultProduct, StripeProduct } from '@/types/products';
+import { DefaultProduct, StripeProduct, UseCartContext } from '@/types/products';
 import { initiateCheckout } from '@/lib/payments';
 import products from 'public/mock/products.json';
 
@@ -8,7 +8,9 @@ const defaultCart: DefaultProduct = {
     products: {},
 };
 
-export default function useCart() {
+export const CartContext: Context<UseCartContext> = createContext();
+
+export const useCartState = () => {
     const [cart, setCart] = useState(defaultCart);
 
     const cartItems = Object.keys(cart.products).map(key => {
@@ -69,4 +71,9 @@ export default function useCart() {
         addToCart,
         checkout,
     };
-}
+};
+
+export const useCart = () => {
+    const cartContext = useContext(CartContext);
+    return cartContext;
+};
