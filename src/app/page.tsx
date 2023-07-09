@@ -4,9 +4,9 @@ import { FaShoppingCart } from 'react-icons/fa';
 import Head from 'next/head';
 import styles from './page.module.css';
 
-import products from 'public/mock/products.json';
 import useCart from '@/hooks/use-cart';
 import Navbar from '@/components/Navbar';
+import Cart from '@/components/Cart';
 
 export default function Home() {
     const { subTotal, totalItems, addToCart, checkout } = useCart();
@@ -37,30 +37,7 @@ export default function Home() {
                             </button>
                         </li>
                     </ul>
-
-                    <ul className={styles.grid}>
-                        {products.map(product => {
-                            const { id, title, description, price, image } = product;
-                            return (
-                                <li className={styles.card} key={id}>
-                                    <a href="#">
-                                        <img src={image} alt={product.title} className={styles.img_md} />
-                                        <h3>{title}</h3>
-                                        <p>${price}</p>
-                                        <p>{description}</p>
-                                    </a>
-                                    <p>
-                                        <button
-                                            className={styles.buttonBlueViolet}
-                                            onClick={() => addToCart({ price: id })}
-                                        >
-                                            Add to Cart
-                                        </button>
-                                    </p>
-                                </li>
-                            );
-                        })}
-                    </ul>
+                    <Cart />
                 </main>
 
                 <footer className={styles.footer}>
