@@ -4,15 +4,15 @@ import { FaShoppingCart } from 'react-icons/fa';
 import Head from 'next/head';
 import styles from './page.module.css';
 
-import useCart from '@/hooks/use-cart';
+import { CartContext, useCartState } from '@/hooks/use-cart';
 import Navbar from '@/components/Navbar';
 import Cart from '@/components/Cart';
 
 export default function Home() {
-    const { subTotal, totalItems, addToCart, checkout } = useCart();
+    const cart = useCartState();
 
     return (
-        <>
+        <CartContext.Provider value={cart}>
             <Navbar />
             <div className={styles.container}>
                 <Head>
@@ -22,21 +22,6 @@ export default function Home() {
 
                 <main className={styles.main}>
                     <p className={styles.description}>Real style must be simple!</p>
-
-                    <ul className={styles.cart}>
-                        <li>
-                            <strong>Items:</strong> {totalItems}
-                        </li>
-                        <li>
-                            <strong>Total:</strong> ${subTotal}
-                        </li>
-                        <li>
-                            <button className={`${styles.buttonBlueViolet} ${styles.cartButton}`} onClick={checkout}>
-                                <FaShoppingCart />
-                                Check Out
-                            </button>
-                        </li>
-                    </ul>
                     <Cart />
                 </main>
 
@@ -44,6 +29,6 @@ export default function Home() {
                     <div>footer</div>
                 </footer>
             </div>
-        </>
+        </CartContext.Provider>
     );
 }
