@@ -1,6 +1,7 @@
 import { FormEvent } from 'react';
 
 import { QuantityProps } from '@/types/products';
+import NumberInput from '../NumberInput/NumberInput';
 
 const Quantity = (props: QuantityProps) => {
     const { id, quantity, updateCart } = props;
@@ -19,8 +20,9 @@ const Quantity = (props: QuantityProps) => {
     };
     return (
         <form onSubmit={onSubmit}>
-            <input type="number" name="quantity" min={0} defaultValue={quantity} />
-            <button type="submit">Update</button>
+            {/* <input type="number" name="quantity" min={0} defaultValue={quantity} /> */}
+            <NumberInput name={'quantity'} value={quantity} min={0} />
+            {/* <button type="submit">Update</button> */}
         </form>
     );
 };
