@@ -2,7 +2,7 @@
 import Head from 'next/head';
 import styles from '@/styles/page.module.css';
 
-import Cart from '@/components/Cart';
+import ProductCard from '@/components/ProductCard';
 
 export default function Home() {
     return (
@@ -14,7 +14,7 @@ export default function Home() {
 
             <main className={styles.main}>
                 <p className={styles.description}>Real style must be simple!</p>
-                <Cart />
+                <ProductCard />
             </main>
 
             <footer className={styles.footer}>

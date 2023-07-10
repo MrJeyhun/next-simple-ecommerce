@@ -64,6 +64,19 @@ export const useCartState = () => {
         });
     };
 
+    const updateCart = ({ price: id, quantity }: StripeProduct) => {
+        // price here is actually stripe item id
+        setCart(prevState => {
+            let cartState = { ...prevState };
+
+            if (cartState.products[id]) {
+                cartState.products[id].quantity = quantity;
+            }
+
+            return cartState;
+        });
+    };
+
     const checkout = () => {
         initiateCheckout({
             lineItems: cartItems.map(item => {
@@ -81,7 +94,9 @@ export const useCartState = () => {
         subTotal,
         totalItems,
         addToCart,
+        updateCart,
         checkout,
+        cartItems,
     };
 };
 
