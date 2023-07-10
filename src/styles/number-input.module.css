@@ -1,0 +1,94 @@
+.numInput {
+    display: inline-flex;
+    width: fit-content;
+    margin: 8px;
+    box-shadow: 0 0 0 1px #cccccc;
+    border-radius: 4px;
+}
+
+.buttonWrapper {
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    gap: 0;
+}
+
+.buttonWrapper button {
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    box-sizing: content-box;
+    text-align: center;
+    border-radius: 0 calc(8px / 2) 0 0;
+    background-color: #f6f6f6;
+    min-height: 21px;
+    user-select: none;
+    flex-grow: 1;
+}
+
+.densed .buttonWrapper button {
+    min-height: 18px;
+}
+
+.buttonWrapper button:hover {
+    color: #4b4760;
+    background-color: #e7e7e7;
+}
+
+.buttonWrapper button:focus {
+    box-shadow: 0 0 0 1px #7f7989;
+    mix-blend-mode: multiply;
+}
+
+.buttonWrapper button:active {
+    color: #4b4760;
+    background-color: #cccccc;
+    box-shadow: 0 0 0 1px #a3a3a3;
+    mix-blend-mode: multiply;
+}
+
+.buttonWrapper button ~ button {
+    border-radius: 0 0 calc(8px / 2) 0;
+}
+
+.buttonWrapper .material_icons {
+    pointer-events: none;
+    font-size: 12px;
+    padding-top: 3px;
+    color: #7f7989;
+}
+
+.customInput {
+    width: 70px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: "Roboto", sans-serif;
+    font-size: calc(8px * 1.75);
+    font-weight: 500;
+    padding: 0 calc(8px * 1.4);
+    border: none;
+    border-right: none;
+    border-radius: calc(8px / 2) 0 0 calc(8px / 2);
+    color: #4b4760;;
+    text-align: center;
+    min-height: 22px;
+    overflow: scroll;
+    height: 48px;
+}
+
+.densed,
+.densed input {
+    height: 40px;
+}
+
+.customInput:focus {
+    outline: 0;
+    box-shadow: 0 0 0 1px #7f7989 inset;
+}
+
+.customInput[type="number"]::-webkit-inner-spin-button {
+    opacity: 1;
+    display: none;
+}

@@ -8,7 +8,9 @@ const Navbar = () => {
     const { subTotal, checkout } = useCart();
     return (
         <nav className={styles.nav}>
-            <p className={styles.navTitle}>Simple Shop</p>
+            <p className={styles.navTitle}>
+                <Link href="/">Simple Shop</Link>
+            </p>
             <p className={styles.navCart}>
                 <Link href="/cart">
                     <FaShoppingCart /> ${subTotal.toFixed(2)}

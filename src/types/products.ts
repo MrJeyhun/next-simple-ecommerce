@@ -66,3 +66,10 @@ export interface TableColumns {
     columnId: string;
     Header: string;
 }
+
+export interface NumberInputProps {
+    name: string;
+    value: number;
+    min: number;
+    max?: number;
+}
