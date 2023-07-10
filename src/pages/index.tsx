@@ -17,9 +17,7 @@ export default function Home() {
                 <ProductCard />
             </main>
 
-            <footer className={styles.footer}>
-                <div>footer</div>
-            </footer>
+            <footer className={styles.footer}>Developed by MrJeyhun</footer>
         </div>
     );
 }

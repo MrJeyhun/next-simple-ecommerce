@@ -8,7 +8,7 @@ const Table = ({ className, data, columns }: TableProps) => {
     if (className) {
         tableClassName = `${tableClassName} ${className}`;
     }
-
+    console.log('data:', data);
     const rows = [...new Array(data.length)].map((item, index) => {
         //@ts-ignore
         return columns.map(({ columnId }) => data[index][columnId]);
@@ -25,6 +25,7 @@ const Table = ({ className, data, columns }: TableProps) => {
             </thead>
             <tbody>
                 {rows.map((row, index) => {
+                    console.log('row: ', row);
                     return (
                         <tr key={index}>
                             {row.map((cell, index) => {
