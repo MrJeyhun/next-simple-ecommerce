@@ -4,7 +4,7 @@ import styles from '@/styles/page.module.css';
 import { useCart } from '@/hooks/use-cart';
 import products from 'public/mock/products.json';
 
-const Cart = () => {
+const ProductCard = () => {
     const { addToCart } = useCart();
 
     return (
@@ -31,4 +31,4 @@ const Cart = () => {
     );
 };
 
-export default Cart;
+export default ProductCard;
