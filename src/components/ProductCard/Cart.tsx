@@ -17,7 +17,7 @@ const ProductCard = () => {
                             <img src={image} alt={product.title} className={styles.img_md} />
                             <h3>{title}</h3>
                             <p>${price}</p>
-                            <p>{description}</p>
+                            <p className={styles.product_description}>{description}</p>
                         </Link>
                         <p>
                             <button className={styles.buttonBlueViolet} onClick={() => addToCart({ price: id })}>
