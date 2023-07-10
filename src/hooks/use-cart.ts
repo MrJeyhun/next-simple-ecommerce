@@ -73,6 +73,10 @@ export const useCartState = () => {
                 cartState.products[id].quantity = quantity;
             }
 
+            if (cart.products[id].quantity === 0) {
+                delete cart.products[id];
+            }
+
             return cartState;
         });
     };
